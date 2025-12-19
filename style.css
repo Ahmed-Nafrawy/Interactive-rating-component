@@ -206,6 +206,11 @@ body {
   .rating-card--preview {
     width: 360px;
   }
+
+  .rating-star--c,
+  .ratings {
+    gap: 10px;
+  }
 }
 
 /* footer */
