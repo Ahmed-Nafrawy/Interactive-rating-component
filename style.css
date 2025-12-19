@@ -206,10 +206,11 @@ body {
   .rating-card--preview {
     width: 360px;
   }
-
-  .rating-star--c,
-  .ratings {
-    gap: 10px;
+  .rating-card {
+    & .rating-stars--c,
+    & .ratings {
+      gap: 10px;
+    }
   }
 }
 
