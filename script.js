@@ -6,12 +6,29 @@ const ratingCard = document.querySelector(".rating-card");
 const ratingPreview = document.querySelector(".rating-card--preview");
 const ratingCount = document.querySelector(".rating-count--p");
 
+const starsContainer = document.querySelector(".rating-stars--c");
+
 let ratingValue = null;
 
 rateButtons.forEach((btn) =>
   btn.addEventListener("click", function (e) {
     e.preventDefault();
-    ratingValue = btn.value;
+    ratingValue = Number(btn.value);
+
+    starsContainer.innerHTML = "";
+    for (let i = 1; i <= ratingValue; i++) {
+      const wrapper = document.createElement("div");
+      wrapper.classList = "rating-star";
+      wrapper.style.animationDelay = `${i * 80}`;
+
+      const el = document.createElement("img");
+      el.src = "./images/icon-star.svg";
+      el.alt = "Star icon";
+      el.classList = "star";
+
+      starsContainer.appendChild(wrapper);
+      wrapper.appendChild(el);
+    }
   })
 );
 
